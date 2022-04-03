@@ -106,6 +106,7 @@ img {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--title-txt-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-list-link:hover,
 .nav-list-link:focus {
@@ -133,6 +134,7 @@ img {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--primary-txt-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-list-link:hover,
 .contacts-list-link:focus {
@@ -186,6 +188,7 @@ img {
     letter-spacing: 0.06em;
     background-color: var(--accent-color);
     color: var(--primary-white-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-button:hover,
 .modal-button:focus {
@@ -321,6 +324,8 @@ img {
     height: 44px;
     background-color: #ffffff;
     border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    fiil 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 
 .social-list-icon {
@@ -349,9 +354,12 @@ img {
     height: 92px;
     border: 1px solid var(--main-icon-color);
     border-radius: 4px;
+    transition: border-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-clients {
     fill: var(--main-icon-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 .clients-list-link:hover,
 .clients-list-link:focus {
@@ -389,6 +397,7 @@ img {
     line-height: 171%;
     letter-spacing: 0.03em;
     color: var(--primary-white-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-list-item,
 .footer-list-item:not(:last-child) {
@@ -426,6 +435,7 @@ img {
     height: 44px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .join-us-list-item:not(:last-child) {
     padding-right: 10px;
@@ -457,6 +467,8 @@ img {
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--title-txt-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -475,6 +487,7 @@ img {
 .portfolio-list-link {
     display: block;
     cursor: pointer;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-list-link:hover,
 .portfolio-list-link:focus {
@@ -507,4 +520,50 @@ img {
     line-height: 1.87;
     letter-spacing: 0.03em;
     color: var(--primary-txt-color);
+}
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgba(0, 0, 0, 0.2);
+    opacity: 1;
+       transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    
+}
+.backdrop.is-hidden .modal{
+    transform: translate(-50%, -50%) scale(2);
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  
+    width: 528px;
+    height: 580px;
+    background-color: var(--primary-white-color);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-btn{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
 }
